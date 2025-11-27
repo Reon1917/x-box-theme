@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=General+Sans:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #f7f9f6;
+  --foreground: #0f1a16;
+  --muted: #4a5b55;
+  --accent: #2d674e;
+  --accent-soft: #dbe8e0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Space Grotesk", "General Sans", "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, #eef4f0 0, #f7f9f6 45%),
+    radial-gradient(circle at 80% 0%, #ecf2ee 0, #f7f9f6 40%),
+    #f7f9f6;
+  color: var(--foreground);
+  font-family: "Space Grotesk", "General Sans", "Geist", system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 15% 20%, #edf3ef, transparent 30%),
+    radial-gradient(circle at 85% 10%, #e8f0eb, transparent 28%),
+    radial-gradient(circle at 60% 80%, #eef4f1, transparent 30%),
+    var(--background);
+}
+
+.background-grid {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(26, 51, 39, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 51, 39, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(circle at 50% 40%, black 40%, transparent 80%);
+  pointer-events: none;
+}
+
+.background-orb {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: float 28s ease-in-out infinite;
+}
+
+.orb-one {
+  top: 8%;
+  left: 4%;
+  background: radial-gradient(circle, rgba(45, 103, 78, 0.25), transparent 60%);
+}
+
+.orb-two {
+  bottom: 6%;
+  right: 8%;
+  background: radial-gradient(circle, rgba(117, 152, 134, 0.3), transparent 60%);
+  animation-delay: 4s;
+}
+
+.surface {
+  border-radius: 28px;
+  border: 1px solid #e4ece6;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 24px 80px rgba(16, 46, 36, 0.08),
+    0 2px 12px rgba(16, 46, 36, 0.04);
+  padding: 1.5rem;
+}
+
+.hero {
+  overflow: hidden;
+}
+
+.stacked-tile {
+  border-radius: 18px;
+  border: 1px solid #e4ece6;
+  background: linear-gradient(135deg, #f8fbf9, #eef4f0);
+  padding: 1rem;
+  box-shadow: 0 16px 40px rgba(16, 46, 36, 0.08);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.stacked-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 46px rgba(16, 46, 36, 0.12);
+}
+
+.tile-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6a7b73;
+}
+
+.tile-value {
+  margin-top: 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f1a16;
+}
+
+.tile-detail {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #4a5b55;
+}
+
+.study-card {
+  border-radius: 16px;
+  border: 1px solid #e4ece6;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 28px rgba(16, 46, 36, 0.07);
+}
+
+.study-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f1a16;
+}
+
+.study-body {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: #4a5b55;
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(14px, -16px, 0);
+  }
+  100% {
+    transform: translate3d(-12px, 12px, 0);
+  }
+}
